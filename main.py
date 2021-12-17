@@ -1,4 +1,5 @@
 from app import create_app, db
+from app.resources.models import User, Contact
 from flask_migrate import Migrate 
 
 
@@ -9,5 +10,7 @@ Migrate(app, db)
 def shel_context():
     return dict(
         app=app,
-        db=db
+        db=db,
+        User=User,
+        Contact=Contact,
     )
